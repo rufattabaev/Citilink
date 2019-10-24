@@ -1,17 +1,14 @@
 package ru.itpark;
 
 import ru.itpark.model.Notebook;
-import ru.itpark.model.Product;
 import ru.itpark.model.Smartphone;
 import ru.itpark.repository.ProductRepository;
-import ru.itpark.service.UlmartService;
+import ru.itpark.service.CitilinkService;
 
-import java.util.List;
-import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
-        final UlmartService service = new UlmartService(new ProductRepository());
+        final CitilinkService service = new CitilinkService(new ProductRepository());
 
         service.add(new Smartphone(
                 0,

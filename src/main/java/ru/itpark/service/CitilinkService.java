@@ -7,10 +7,10 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class UlmartService {
+public class CitilinkService {
     private final ProductRepository repository;
 
-    public UlmartService(ProductRepository repository) {
+    public CitilinkService(ProductRepository repository) {
         this.repository = repository;
     }
 
@@ -30,7 +30,8 @@ public class UlmartService {
         }
         repository.save(product);
     }
-// Удаляет по id
+
+    // Удаляет по id
     public void deleteById(int id) {
         if (id != 0) {
             repository.delete(id);
@@ -43,7 +44,7 @@ public class UlmartService {
         for (Product product : repository.getAll()) {
             if (product.getCategory().contains(category)) {
                 result.add(product);
-                result.sort((Comparator.comparingInt(Product::getPrice)));
+                result.sort(Comparator.comparingInt(Product::getPrice));
             }
         }
         return result;
@@ -55,26 +56,20 @@ public class UlmartService {
         for (Product product : repository.getAll()) {
             if (product.getCategory().contains(category)) {
                 result.add(product);
-                result.sort(((o1, o2) -> -(o1.getPrice() - o2.getPrice())));
+                result.sort((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
             }
         }
         return result;
     }
 
-
-    public List<Product> sortedBy(Comparator<Product> comparator) {
-        List<Product> result = new LinkedList<>(repository.getAll());
-        result.sort(comparator);
-        return result;
-    }
-//Поиск по названию по всем категориям по алфавиту по возрастающей цене
+    //Поиск по названию по всем категориям по алфавиту по возрастающей цене
     public List<Product> searchByName(String name) {
         List<Product> result = new LinkedList<>();
         for (Product product : repository.getAll()) {
             if (product.getName().contains(name)) {
                 result.add(product);
-                result.sort((Comparator.comparingInt(Product::getPrice)));
-                result.sort(((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName())));
+                result.sort(Comparator.comparingInt(Product::getPrice));
+                result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
             }
         }
         return result;
