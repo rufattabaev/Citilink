@@ -41,9 +41,9 @@ public class CitilinkService {
         for (Product product : repository.getAll()) {
             if (product.getCategory().contains(category)) {
                 result.add(product);
-                result.sort(Comparator.comparingInt(Product::getPrice));
             }
         }
+        result.sort(Comparator.comparingInt(Product::getPrice));
         return result;
     }
 
@@ -52,9 +52,31 @@ public class CitilinkService {
         for (Product product : repository.getAll()) {
             if (product.getCategory().contains(category)) {
                 result.add(product);
-                result.sort((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
             }
         }
+        result.sort((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
+        return result;
+    }
+
+    public List<Product> searchByNameByPriceAsc(String name) {
+        List<Product> result = new LinkedList<>();
+        for (Product product : repository.getAll()) {
+            if (product.getName().contains(name)) {
+                result.add(product);
+            }
+        }
+        result.sort(Comparator.comparingInt(Product::getPrice));
+        return result;
+    }
+
+    public List<Product> searchByNameByPriceDesc(String name) {
+        List<Product> result = new LinkedList<>();
+        for (Product product : repository.getAll()) {
+            if (product.getName().contains(name)) {
+                result.add(product);
+            }
+        }
+        result.sort((o1, o2) -> -(o1.getPrice() - o2.getPrice()));
         return result;
     }
 
@@ -63,10 +85,9 @@ public class CitilinkService {
         for (Product product : repository.getAll()) {
             if (product.getName().contains(name)) {
                 result.add(product);
-                result.sort(Comparator.comparingInt(Product::getPrice));
-                result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
             }
         }
+        result.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
         return result;
     }
 

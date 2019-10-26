@@ -115,6 +115,10 @@ public class Main {
 
         System.out.println(service.searchByName("Apple"));
 
+        System.out.println(service.searchByNameByPriceAsc("Apple"));
+
+        System.out.println(service.searchByNameByPriceDesc("Apple"));
+
         System.out.println(service.searchByCategoryByPriceAsc("Smartphone"));
 
         System.out.println(service.searchByCategoryByPriceDesc("Smartphone"));
