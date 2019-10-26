@@ -1,11 +1,11 @@
 package ru.itpark.model;
 
-public class Notebook extends Product {
+public class Laptop extends Product {
     private int screenResolution;
     private String processor;
     private String operatingSystem;
 
-    public Notebook(long id, String imageUrl, String name, String stars, int price, boolean ableToBeAddedInBasket, String category, int screenResolution, String processor, String operatingSystem) {
+    public Laptop(long id, String imageUrl, String name, String stars, int price, boolean ableToBeAddedInBasket, String category, int screenResolution, String processor, String operatingSystem) {
         super(id, imageUrl, name, stars, price, ableToBeAddedInBasket, category);
         this.screenResolution = screenResolution;
         this.processor = processor;
@@ -40,7 +40,7 @@ public class Notebook extends Product {
     public String toString() {
         return "Name " + getName() +
                 " Price" + getPrice() +
-                " Notebook{" +
+                " Laptop{" +
                 "screenResolution=" + screenResolution +
                 ", processor='" + processor + '\'' +
                 ", operatingSystem='" + operatingSystem + '\'' +

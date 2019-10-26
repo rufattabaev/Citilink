@@ -1,6 +1,6 @@
 package ru.itpark;
 
-import ru.itpark.model.Notebook;
+import ru.itpark.model.Laptop;
 import ru.itpark.model.Smartphone;
 import ru.itpark.repository.ProductRepository;
 import ru.itpark.service.CitilinkService;
@@ -75,38 +75,38 @@ public class Main {
                 12,
                 3000));
 
-        service.add(new Notebook(
+        service.add(new Laptop(
                 0,
                 "https://Url",
                 "HP ProBook 430 G5",
                 "0",
                 59_230,
                 true,
-                "Notebook",
+                "Laptop",
                 13,
                 "Intel Corei5",
                 "Windows 10"));
 
-        service.add(new Notebook(
+        service.add(new Laptop(
                 0,
                 "https://Url",
                 "DIGMA CITI E600",
                 "4",
                 15_180,
                 true,
-                "Notebook",
+                "Laptop",
                 15,
                 "Intel Atom X5",
                 "Windows 10"));
 
-        service.add(new Notebook(
+        service.add(new Laptop(
                 0,
                 "https://Url",
                 "LENOVO V330-14IKB",
                 "0",
                 43_990,
                 true,
-                "Notebook",
+                "Laptop",
                 14,
                 "Intel Corei5",
                 "Windows 10"));
