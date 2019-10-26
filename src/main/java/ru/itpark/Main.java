@@ -8,7 +8,7 @@ import ru.itpark.service.CitilinkService;
 
 public class Main {
     public static void main(String[] args) {
-        final CitilinkService service = new CitilinkService(new ProductRepository());
+        CitilinkService service = new CitilinkService(new ProductRepository());
 
         service.add(new Smartphone(
                 0,
