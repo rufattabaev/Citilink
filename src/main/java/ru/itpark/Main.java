@@ -111,15 +111,12 @@ public class Main {
                 "Intel Corei5",
                 "Windows 10"));
 
-        //Удаляет по id
         service.deleteById(3);
 
-//Поиск по названию без учёта категории
         System.out.println(service.searchByName("Apple"));
-//Поиск по категории  по возрастающей цене
+
         System.out.println(service.searchByCategoryByPriceAsc("Smartphone"));
 
-//Поиск по категории по убывающей цене
         System.out.println(service.searchByCategoryByPriceDesc("Smartphone"));
 
     }

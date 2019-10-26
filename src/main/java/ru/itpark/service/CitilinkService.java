@@ -14,7 +14,6 @@ public class CitilinkService {
         this.repository = repository;
     }
 
-    //Добавляет продукт
     public void add(Product product) {
         if (product.getId() != 0) {
             throw new IllegalArgumentException("Id must be zero");
@@ -31,14 +30,12 @@ public class CitilinkService {
         repository.save(product);
     }
 
-    // Удаляет по id
     public void deleteById(int id) {
         if (id != 0) {
             repository.delete(id);
         }
     }
 
-    //сортировка по категории по возрастающей цене
     public List<Product> searchByCategoryByPriceAsc(String category) {
         List<Product> result = new LinkedList<>();
         for (Product product : repository.getAll()) {
@@ -50,7 +47,6 @@ public class CitilinkService {
         return result;
     }
 
-    //сортировка по категории по убывающей цене
     public List<Product> searchByCategoryByPriceDesc(String category) {
         List<Product> result = new LinkedList<>();
         for (Product product : repository.getAll()) {
@@ -62,7 +58,6 @@ public class CitilinkService {
         return result;
     }
 
-    //Поиск по названию по всем категориям по алфавиту по возрастающей цене
     public List<Product> searchByName(String name) {
         List<Product> result = new LinkedList<>();
         for (Product product : repository.getAll()) {
